@@ -3,133 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Chauhan | Principal Application Developer</title>
-    <meta name="description" content="Portfolio of Gaurav Chauhan, a Principal Application Developer with 17+ years of experience in Java, Solution Architecture, and AI.">
+    <title>Gaurav Chauhan | Principal Architect</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --accent-color: #38bdf8; /* Light Blue */
-            --card-bg: #1e293b;
-            --secondary-text: #94a3b8;
+            --primary-color: #0f172a;
+            --secondary-color: #3b82f6;
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --light-bg: #ffffff;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-
-        /* Container */
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; width: 100%; }
-
-        /* Header */
-        header { padding-top: 4rem; padding-bottom: 3rem; border-bottom: 1px solid #334155; margin-bottom: 3rem; }
-        h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.05em; margin-bottom: 0.5rem; color: #fff; }
-        .role { font-size: 1.5rem; color: var(--accent-color); font-weight: 500; margin-bottom: 1rem; }
-        .location { color: var(--secondary-text); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
-
-        /* Sections */
-        section { margin-bottom: 4rem; }
-        h2 { font-size: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 1rem; margin-bottom: 1.5rem; color: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        a { text-decoration: none; color: var(--secondary-color); }
         
-        /* Experience Timeline */
-        .job { margin-bottom: 2rem; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; }
-        .job-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
-        .company { color: var(--accent-color); }
-        .date { color: var(--secondary-text); font-size: 0.9rem; }
-        .job-details { list-style-position: inside; color: var(--secondary-text); margin-left: 1rem; }
-        .job-details li { margin-bottom: 0.5rem; }
+        nav { position: fixed; top: 0; width: 100%; background: var(--primary-color); padding: 1rem 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav ul { display: flex; justify-content: center; list-style: none; gap: 2rem; }
+        nav a { color: white; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary-color); }
 
-        /* Projects Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid #334155; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-3px); border-color: var(--accent-color); }
-        .card h3 { color: #fff; margin-bottom: 0.5rem; }
+        section { padding: 6rem 10% 4rem; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        h2 { font-size: 2.5rem; color: var(--primary-color); border-bottom: 3px solid var(--secondary-color); display: inline-block; margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; color: var(--primary-color); margin-top: 1.5rem; }
 
-        /* Footer */
-        footer { margin-top: auto; border-top: 1px solid #334155; padding: 2rem 0; text-align: center; color: var(--secondary-text); font-size: 0.9rem; }
-        a { color: var(--accent-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        #home { background: linear-gradient(135deg, #e2e8f0 0%, #ffffff 100%); text-align: center; }
+        .subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; color: #64748b; }
+        .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
+        .btn { padding: 0.75rem 1.5rem; background: var(--secondary-color); color: white; border-radius: 5px; font-weight: bold; transition: transform 0.2s, background 0.2s; }
+        .btn:hover { background: #2563eb; transform: translateY(-2px); color: white; }
 
-        @media (max-width: 600px) { h1 { font-size: 2.2rem; } .job-header { flex-direction: column; } }
+        .card-container { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .card { background: var(--light-bg); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; border-left: 4px solid var(--secondary-color); cursor: pointer; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
+        .date { color: #94a3b8; font-size: 0.9rem; font-weight: bold; }
+        ul.exp-list { margin-left: 1.5rem; margin-top: 1rem; }
+        ul.exp-list li { margin-bottom: 0.5rem; }
+
+        #ai-data { background: var(--primary-color); color: white; }
+        #ai-data h2 { color: white; border-bottom-color: var(--secondary-color); }
+        #ai-data h3 { color: #cbd5e1; }
+        .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .ai-box { background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
+        .ai-box:hover { background: rgba(255,255,255,0.1); }
+
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
+        .skill-tag { background: #e2e8f0; color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
+        .skill-tag:hover { background: var(--secondary-color); color: white; }
+
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 2rem; margin-top: auto; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Gaurav Chauhan</h1>
-            <div class="role">Principal Application Developer • Java Specialist</div>
-            <div class="location">📍 Alpharetta, GA • 17+ Years Experience</div>
-            <p style="margin-top: 1.5rem; max-width: 700px; color: var(--secondary-text);">
-                Expert in solution architecture and enterprise-scale application development. 
-                Currently leading high-impact initiatives at ADP, bridging the gap between robust backend systems and modern AI solutions.
-            </p>
-        </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#ai-data">AI & Data Systems</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
 
-        <section id="experience">
-            <h2>Professional Experience</h2>
+    <section id="home">
+        [span_0](start_span)<h1>Gaurav Chauhan[span_0](end_span)</h1>
+        <div class="subtitle">Principal Architect | [span_1](start_span)AWS Certified Solutions Architect[span_1](end_span)</div>
+        [span_2](start_span)<p style="max-width: 600px; margin: 0 auto;">Building high-quality, scalable, and innovative systems that create real impact for clients and end users.[span_2](end_span)</p>
+        <div class="contact-links">
+            <a href="mailto:chauhan.gaurav@hotmail.com" class="btn">Email Me</a>
+            <a href="https://www.linkedin.com/in/chauhangs" target="_blank" class="btn">LinkedIn</a>
+            <a href="https://gauravchauhan.dev/" target="_blank" class="btn">Portfolio</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        [span_3](start_span)<p>As a Principal Architect at ADP, I bring over 17 years of experience in software engineering, architecture, and leadership[span_3](end_span). [span_4](start_span)I specialize in designing and delivering Java-based enterprise solutions across diverse domains including cable, mobile payments, and human capital management[span_4](end_span).</p>
+        <br>
+        [span_5](start_span)<p>I hold an AWS Certified Solutions Architect credential and have extensive experience in cloud-native development and RESTful web services, including the design of HATEOAS-compliant APIs[span_5](end_span).</p>
+    </section>
+
+    <section id="ai-data">
+        <h2>Advanced Data & Decision Systems</h2>
+        <p>Building the foundational data architectures and scalable processing pipelines required for modern intelligent systems and AI integration.</p>
+        <div class="ai-grid">
+            <div class="ai-box">
+                <h3>Personalized Decision Support</h3>
+                [span_6](start_span)<p>Designed and developed integration workflows between core benefit systems and external decision support platforms to provide personalized guidance based on employees' physical, mental, and financial needs[span_6](end_span).</p>
+            </div>
+            <div class="ai-box">
+                <h3>Data-Driven Narratives</h3>
+                [span_7](start_span)<p>Engineered the Annual Enrollment (AE) Snapshot system to generate data-driven narratives[span_7](end_span). [span_8](start_span)The system describes annual enrollment experiences through key metrics, summarizes behavior, and spots trends within employee populations[span_8](end_span).</p>
+            </div>
+            <div class="ai-box">
+                <h3>Real-Time Event Streaming</h3>
+                [span_9](start_span)<p>Implemented Change Data Capture (CDC) pipelines using Debezium to continuously read WAL logs and broadcast massive datasets in real-time using Kafka[span_9](end_span).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="card-container">
             
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Principal Application Developer</span>
-                    <span class="date">Mar 2017 – Present</span>
+            <div class="card">
+                <div class="card-header">
+                    [span_10](start_span)<h3>Principal Architect @ ADP[span_10](end_span)</h3>
+                    <span class="date">Mar 2022 - Present</span>
                 </div>
-                <div class="company">ADP Technologies</div>
-                <ul class="job-details">
-                    <li><strong>One Carrier Gateway Platform (2023–Present):</strong> Leading the architecture and development of a unified gateway for carrier integrations.</li>
-                    <li><strong>Enhanced Decision Support Platform (2022–2023):</strong> Designed scalable decision support systems to optimize business workflows.</li>
-                    <li><strong>Billing Aggregator System (2020–2022):</strong> Engineered a high-volume billing aggregation system for enterprise clients.</li>
+                <ul class="exp-list">
+                    [span_11](start_span)<li>Developing a benefits carrier integration platform utilizing AWS serverless architecture[span_11](end_span).</li>
+                    [span_12](start_span)<li>Defining technology roadmaps and architectural blueprints in collaboration with business stakeholders[span_12](end_span).</li>
+                    [span_13](start_span)<li>Developed cloud-native solutions leveraging AWS CDK to optimize scalability and cost-effectiveness[span_13](end_span).</li>
+                    [span_14](start_span)<li>Built AWS-based APIs and workflows using Lambda, step-functions, MSK, and Spring Boot[span_14](end_span).</li>
                 </ul>
             </div>
 
-            <div class="job">
-                <div class="job-header">
-                    <span class="job-title">Previous Roles</span>
-                    <span class="date">Prior to 2017</span>
+            <div class="card">
+                <div class="card-header">
+                    [span_15](start_span)<h3>Lead Application Developer @ ADP[span_15](end_span)</h3>
+                    <span class="date">Apr 2019 - Mar 2022</span>
                 </div>
-                <ul class="job-details">
-                    <li><strong>Icon Technologies Inc:</strong> Senior Java Developer</li>
-                    <li><strong>SK C&C USA / Mozido:</strong> Backend Engineer</li>
-                    <li><strong>Infosys Limited:</strong> Software Engineer</li>
+                <ul class="exp-list">
+                    [span_16](start_span)<li>Led development for the Benefits domain across AES and Billing Microservices[span_16](end_span).</li>
+                    [span_17](start_span)<li>Developed microservices to integrate System of Record (SOR) with Oracle Billing systems[span_17](end_span).</li>
+                    [span_18](start_span)<li>Migrated microservices from ICP to AWS, and transitioned databases from MongoDB to Postgres[span_18](end_span).</li>
+                    [span_19](start_span)<li>Automated the Annual Enrollment Snapshot report generation, optimizing SQL performance and converting ETL jobs[span_19](end_span).</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="expertise">
-            <h2>Technical Expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Core Backend</h3>
-                    <p style="color: var(--secondary-text);">Java, Spring Boot, Microservices, Distributed Systems, RESTful APIs.</p>
+            <div class="card">
+                <div class="card-header">
+                    [span_20](start_span)<h3>Senior Application Developer @ ADP[span_20](end_span)</h3>
+                    <span class="date">Oct 2016 - Apr 2019</span>
                 </div>
-                <div class="card">
-                    <h3>AI & Innovation</h3>
-                    <p style="color: var(--secondary-text);">Building AI Agents, LLM Integration, Process Automation.</p>
-                </div>
-                <div class="card">
-                    <h3>Education</h3>
-                    <p style="color: var(--secondary-text);">B.Tech in Electronics & Communications<br><em>Uttar Pradesh Technical University</em></p>
-                </div>
+                <ul class="exp-list">
+                    [span_21](start_span)<li>Drove the redesign of ADP's talent management application (TMS) utilizing Angular JS[span_21](end_span).</li>
+                    [span_22](start_span)<li>Developed HATEOAS-compliant REST APIs tailored for Angular UI consumption[span_22](end_span).</li>
+                    [span_23](start_span)<li>Engineered an asynchronous framework dedicated to email distribution and report generation[span_23](end_span).</li>
+                </ul>
             </div>
-        </section>
 
-        <section id="contact">
-            <h2>Connect</h2>
-            <p style="color: var(--secondary-text); margin-bottom: 1rem;">
-                Open to discussing architecture, AI agents, and complex backend challenges.
-            </p>
-            <p>
-                <a href="mailto:contact@gauravchauhan.dev">Email Me</a> • 
-                <a href="https://linkedin.com/in/gauravchauhan">LinkedIn</a> • 
-                <a href="https://github.com/gauravchauhan">GitHub</a>
-            </p>
-        </section>
-    </div>
+            <div class="card">
+                <div class="card-header">
+                    [span_24](start_span)[span_25](start_span)<h3>Senior Server Engineer @ Mozido / SK C&C[span_24](end_span)[span_25](end_span)</h3>
+                    <span class="date">Mar 2013 - Oct 2016</span>
+                </div>
+                <ul class="exp-list">
+                    [span_26](start_span)[span_27](start_span)<li>Served as Lead Java Developer for customized wallet products, including Vodafone Wallet (Europe) and Shell Fill Up & Go (UK)[span_26](end_span)[span_27](end_span).</li>
+                    [span_28](start_span)[span_29](start_span)<li>Managed end-to-end technical design, release management, and Level 3 production support[span_28](end_span)[span_29](end_span).</li>
+                    [span_30](start_span)[span_31](start_span)<li>Led agile development teams across the US, Germany, UK, and India[span_30](end_span)[span_31](end_span).</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Arsenal</h2>
+        <div class="skills-grid">
+            [span_32](start_span)<span class="skill-tag">Architecture Reviews[span_32](end_span)</span>
+            [span_33](start_span)<span class="skill-tag">Amazon CloudWatch[span_33](end_span)</span>
+            [span_34](start_span)<span class="skill-tag">TypeScript[span_34](end_span)</span>
+            [span_35](start_span)<span class="skill-tag">AWS Serverless[span_35](end_span)</span>
+            [span_36](start_span)<span class="skill-tag">AWS CDK[span_36](end_span)</span>
+            [span_37](start_span)<span class="skill-tag">Spring Boot[span_37](end_span)</span>
+            [span_38](start_span)<span class="skill-tag">Microservices[span_38](end_span)</span>
+            [span_39](start_span)[span_40](start_span)<span class="skill-tag">Kafka & MSK[span_39](end_span)[span_40](end_span)</span>
+            [span_41](start_span)[span_42](start_span)<span class="skill-tag">PostgreSQL & Document DB[span_41](end_span)[span_42](end_span)</span>
+            [span_43](start_span)<span class="skill-tag">Debezium (CDC)[span_43](end_span)</span>
+            [span_44](start_span)<span class="skill-tag">REST APIs (HATEOAS)[span_44](end_span)</span>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> Gaurav Chauhan. All rights reserved.</p>
+        <p>&copy; 2026 Gaurav Chauhan. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
