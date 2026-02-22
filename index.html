@@ -189,7 +189,7 @@
             padding-left: 2rem;
             margin-left: 1rem;
         }
-        .timeline-item { position: relative; margin-bottom: 3rem; }
+        .timeline-item { position: relative; margin-bottom: 3.5rem; }
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -210,9 +210,8 @@
             display: inline-block;
         }
         .timeline-title { font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 0.2rem; }
-        .timeline-company { font-size: 1rem; color: var(--text-muted); margin-bottom: 1rem; }
-        .timeline-content { color: var(--text-muted); font-size: 0.95rem; list-style-position: inside; }
-        .timeline-content li { margin-bottom: 0.5rem; }
+        .timeline-company { font-size: 1rem; color: var(--accent-secondary); margin-bottom: 1rem; font-weight: 500;}
+        .timeline-content { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
 
         .skills-wrapper { display: flex; flex-wrap: wrap; gap: 0.8rem; }
         .skill-badge {
@@ -323,43 +322,45 @@
                     <span class="timeline-date">August 2025 - Present</span>
                     <h3 class="timeline-title">Principal Architect</h3>
                     <div class="timeline-company">ADP | Alpharetta, GA</div>
-                    <ul class="timeline-content">
-                        <li>Developing a benefits carrier integration platform utilizing AWS serverless architecture.</li>
-                        <li>Defining technology roadmaps and architectural blueprints in collaboration with business stakeholders.</li>
-                        <li>Developed cloud-native solutions leveraging AWS CDK to optimize scalability and cost-effectiveness.</li>
-                    </ul>
+                    <p class="timeline-content">
+                        Currently driving the architectural vision for a massive-scale benefits carrier integration platform utilizing AWS serverless infrastructure. I specialize in designing cloud-native solutions with AWS CDK, developing event-driven workflows utilizing Lambda, Step Functions, and MSK, alongside Spring Boot microservices to ensure highly scalable and cost-effective data exchange.
+                    </p>
                 </div>
 
                 <div class="timeline-item">
                     <span class="timeline-date">March 2022 - August 2025</span>
                     <h3 class="timeline-title">Principal Application Developer</h3>
                     <div class="timeline-company">ADP | Alpharetta, GA</div>
-                    <ul class="timeline-content">
-                        <li>Led a team to design and develop integration between ADP benefit systems and external decision support platforms.</li>
-                        <li>Developed concurrency design models for sequential and exactly-once processing using Document DB.</li>
-                        <li>Designed underlying data structures and data flow to integrate multiple internal systems.</li>
-                    </ul>
+                    <p class="timeline-content">
+                        Led the engineering of complex integration pipelines between internal benefit systems and external decision-support platforms. My technical focus centered on designing robust data structures and developing advanced concurrency models for sequential and exactly-once processing using AWS DocumentDB and scalable data flow architectures.
+                    </p>
                 </div>
 
                 <div class="timeline-item">
                     <span class="timeline-date">April 2019 - March 2022</span>
                     <h3 class="timeline-title">Lead Application Developer</h3>
                     <div class="timeline-company">ADP | Alpharetta, GA</div>
-                    <ul class="timeline-content">
-                        <li>Led development for the Benefits domain across AES and Billing Microservices.</li>
-                        <li>Implemented CDC using Debezium to continuously read WAL logs and broadcast messages using Kafka.</li>
-                        <li>Automated Annual Enrollment Snapshot report generation, optimizing SQL performance.</li>
-                    </ul>
+                    <p class="timeline-content">
+                        Architected and developed high-throughput microservices for the Benefits domain, migrating legacy infrastructure from ICP to AWS and transitioning databases from MongoDB to PostgreSQL using Flyway. Implemented real-time event streaming using Change Data Capture (CDC) via Debezium and Kafka, and optimized high-volume data processing by converting ETL jobs to Spring Batch.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="timeline-date">March 2017 - April 2019</span>
+                    <h3 class="timeline-title">Senior Application Developer</h3>
+                    <div class="timeline-company">ADP | Alpharetta, GA</div>
+                    <p class="timeline-content">
+                        Spearheaded the UI/UX technology migration of ADP's talent management application from Adobe Flex to AngularJS. Engineered highly performant, HATEOAS-compliant REST APIs tailored for modern frontend consumption, and developed an asynchronous processing framework for enterprise-scale email distribution and report generation.
+                    </p>
                 </div>
 
                 <div class="timeline-item">
                     <span class="timeline-date">March 2013 - October 2016</span>
                     <h3 class="timeline-title">Senior Server Engineer</h3>
                     <div class="timeline-company">Mozido / SK C&C | Alpharetta, GA</div>
-                    <ul class="timeline-content">
-                        <li>Served as Lead Java Developer for customized wallet products, including Vodafone Wallet.</li>
-                        <li>Managed end-to-end technical design, release management, and Level 3 production support.</li>
-                    </ul>
+                    <p class="timeline-content">
+                        Served as Lead Java Developer managing the end-to-end technical delivery of high-profile mobile wallet products for Vodafone and Shell. Directed global Agile development teams while maintaining hands-on responsibility for architectural design, release management, and Tier 3 production support.
+                    </p>
                 </div>
 
             </div>
