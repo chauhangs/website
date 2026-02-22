@@ -31,7 +31,6 @@
         a { text-decoration: none; color: var(--accent-color); transition: color 0.3s; }
         a:hover { color: #004499; }
         
-        /* Ultra-minimal translucent navigation */
         nav { 
             position: fixed; 
             top: 0; 
@@ -59,7 +58,6 @@
         }
         nav a:hover { color: #000; }
 
-        /* Container constraints to fix desktop line-length issues */
         .container {
             max-width: 980px;
             margin: 0 auto;
@@ -68,86 +66,27 @@
 
         section { padding: 8rem 0 6rem; display: flex; flex-direction: column; justify-content: center; align-items: center; }
         
-        /* Apple-style Typography */
-        h1 { 
-            font-size: 4.5rem; 
-            font-weight: 600; 
-            letter-spacing: -0.005em; 
-            text-align: center;
-            margin-bottom: 0.5rem;
-        }
-        h2 { 
-            font-size: 3rem; 
-            font-weight: 600; 
-            letter-spacing: -0.005em; 
-            text-align: center; 
-            margin-bottom: 3rem; 
-        }
-        h3 { 
-            font-size: 1.5rem; 
-            font-weight: 600; 
-            margin-bottom: 0.8rem;
-        }
-        p { 
-            font-size: 1.15rem; 
-            color: var(--text-muted); 
-            text-align: center; 
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.5;
-        }
+        h1 { font-size: 4.5rem; font-weight: 600; letter-spacing: -0.005em; text-align: center; margin-bottom: 0.5rem; }
+        h2 { font-size: 3rem; font-weight: 600; letter-spacing: -0.005em; text-align: center; margin-bottom: 3rem; }
+        h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.8rem; }
+        p { font-size: 1.15rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 1.5rem; line-height: 1.5; }
 
-        /* Hero Section */
         #home { background-color: var(--bg-secondary); }
-        .subtitle { 
-            font-size: 1.75rem; 
-            font-weight: 500; 
-            margin-bottom: 2rem; 
-            color: var(--text-main); 
-            text-align: center; 
-        }
+        .subtitle { font-size: 1.75rem; font-weight: 500; margin-bottom: 2rem; color: var(--text-main); text-align: center; }
         .contact-links { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-        .btn { 
-            padding: 0.8rem 1.5rem; 
-            background: var(--text-main); 
-            color: #fff; 
-            border-radius: 980px; 
-            font-size: 1rem; 
-            font-weight: 400; 
-            transition: transform 0.2s, opacity 0.2s; 
-        }
-        .btn.secondary {
-            background: rgba(0,0,0,0.05);
-            color: var(--text-main);
-        }
+        .btn { padding: 0.8rem 1.5rem; background: var(--text-main); color: #fff; border-radius: 980px; font-size: 1rem; font-weight: 400; transition: transform 0.2s, opacity 0.2s; }
+        .btn.secondary { background: rgba(0,0,0,0.05); color: var(--text-main); }
         .btn:hover { opacity: 0.8; transform: scale(1.02); color: #fff; }
         .btn.secondary:hover { color: var(--text-main); }
 
-        /* Grids for Desktop */
-        .grid-2 { 
-            display: grid; 
-            grid-template-columns: 1fr; 
-            gap: 2rem; 
-            width: 100%;
-        }
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 2rem; width: 100%; }
         @media (min-width: 768px) {
             .grid-2 { grid-template-columns: repeat(2, 1fr); }
             h1 { font-size: 5.5rem; }
         }
 
-        /* Cards */
-        .card { 
-            background: #ffffff; 
-            padding: 2.5rem; 
-            border-radius: 18px; 
-            box-shadow: 0 4px 24px rgba(0,0,0,0.04); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-        }
-        .card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08); 
-        }
+        .card { background: #ffffff; padding: 2.5rem; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
         .card p { text-align: left; font-size: 1rem; margin-bottom: 0; }
         .card-header { margin-bottom: 1rem; }
         .date { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; display: block; margin-top: 0.3rem;}
@@ -155,45 +94,17 @@
         ul.exp-list { margin-left: 1.5rem; margin-top: 1.5rem; color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
         ul.exp-list li { margin-bottom: 0.8rem; }
 
-        /* Dark Section for AI */
         #ai-data { background: var(--bg-dark); color: var(--text-light); }
         #ai-data h2 { color: var(--text-light); }
         #ai-data p { color: #a1a1a6; }
-        #ai-data .card { 
-            background: #1d1d1f; 
-            box-shadow: none; 
-        }
+        #ai-data .card { background: #1d1d1f; box-shadow: none; }
         #ai-data .card h3 { color: var(--text-light); }
 
-        /* Skills */
-        .skills-grid { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 0.8rem; 
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .skill-tag { 
-            background: #ffffff; 
-            color: var(--text-main); 
-            padding: 0.8rem 1.5rem; 
-            border-radius: 12px; 
-            font-weight: 500; 
-            font-size: 1rem; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.2s; 
-        }
+        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; max-width: 800px; margin: 0 auto; }
+        .skill-tag { background: #ffffff; color: var(--text-main); padding: 0.8rem 1.5rem; border-radius: 12px; font-weight: 500; font-size: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.05); transition: all 0.2s; }
         .skill-tag:hover { border-color: var(--text-main); }
 
-        footer { 
-            background: var(--bg-secondary); 
-            color: var(--text-muted); 
-            text-align: center; 
-            padding: 3rem; 
-            font-size: 0.9rem;
-        }
+        footer { background: var(--bg-secondary); color: var(--text-muted); text-align: center; padding: 3rem; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -254,12 +165,25 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Principal Architect</h3>
-                        <span class="date">ADP | Mar 2022 - Present</span>
+                        <span class="date">ADP | Aug 2025 - Present</span>
                     </div>
                     <ul class="exp-list">
                         <li>Developing a benefits carrier integration platform utilizing AWS serverless architecture.</li>
                         <li>Defining technology roadmaps and architectural blueprints in collaboration with stakeholders.</li>
                         <li>Developed cloud-native solutions leveraging AWS CDK to optimize scalability.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Principal Application Developer</h3>
+                        <span class="date">ADP | Mar 2022 - Aug 2025</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Led a team to design and develop integration between ADP benefit systems and external decision support platforms.</li>
+                        <li>Developed concurrency design models for sequential and exactly-once processing using Document DB.</li>
+                        <li>Designed underlying data structures and data flow to integrate multiple internal systems.</li>
+                        <li>Designed and developed the framework for HROpen conversion.</li>
                     </ul>
                 </div>
 
