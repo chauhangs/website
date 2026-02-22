@@ -5,53 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Chauhan | Principal Architect</title>
     <style>
+        /* Apple-Inspired Design System */
         :root {
-            --primary-color: #0f172a;
-            --secondary-color: #3b82f6;
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-            --light-bg: #ffffff;
+            --bg-color: #ffffff;
+            --bg-secondary: #f5f5f7;
+            --bg-dark: #000000;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --text-light: #f5f5f7;
+            --accent-color: #0066cc;
+            --font-stack: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-        a { text-decoration: none; color: var(--secondary-color); }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-stack); }
         
-        nav { position: fixed; top: 0; width: 100%; background: var(--primary-color); padding: 1rem 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        nav ul { display: flex; justify-content: center; list-style: none; gap: 2rem; }
-        nav a { color: white; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
-        nav a:hover { color: var(--secondary-color); }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.47059; 
+            font-weight: 400; 
+            letter-spacing: -0.022em;
+            -webkit-font-smoothing: antialiased;
+        }
 
-        section { padding: 6rem 10% 4rem; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-        h2 { font-size: 2.5rem; color: var(--primary-color); border-bottom: 3px solid var(--secondary-color); display: inline-block; margin-bottom: 2rem; }
-        h3 { font-size: 1.5rem; color: var(--primary-color); margin-top: 1.5rem; }
+        a { text-decoration: none; color: var(--accent-color); transition: color 0.3s; }
+        a:hover { color: #004499; }
+        
+        /* Ultra-minimal translucent navigation */
+        nav { 
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.8); 
+            backdrop-filter: saturate(180%) blur(20px); 
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            padding: 0.8rem 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        nav ul { 
+            display: flex; 
+            justify-content: center; 
+            list-style: none; 
+            gap: 2.5rem; 
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        nav a { 
+            color: rgba(0, 0, 0, 0.8); 
+            font-size: 0.75rem; 
+            font-weight: 400; 
+            letter-spacing: -0.01em; 
+        }
+        nav a:hover { color: #000; }
 
-        #home { background: linear-gradient(135deg, #e2e8f0 0%, #ffffff 100%); text-align: center; }
-        .subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; color: #64748b; }
-        .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
-        .btn { padding: 0.75rem 1.5rem; background: var(--secondary-color); color: white; border-radius: 5px; font-weight: bold; transition: transform 0.2s, background 0.2s; }
-        .btn:hover { background: #2563eb; transform: translateY(-2px); color: white; }
+        /* Container constraints to fix desktop line-length issues */
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-        .card-container { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        .card { background: var(--light-bg); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; border-left: 4px solid var(--secondary-color); cursor: pointer; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem; }
-        .date { color: #94a3b8; font-size: 0.9rem; font-weight: bold; }
-        ul.exp-list { margin-left: 1.5rem; margin-top: 1rem; }
-        ul.exp-list li { margin-bottom: 0.5rem; }
+        section { padding: 8rem 0 6rem; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        
+        /* Apple-style Typography */
+        h1 { 
+            font-size: 4.5rem; 
+            font-weight: 600; 
+            letter-spacing: -0.005em; 
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        h2 { 
+            font-size: 3rem; 
+            font-weight: 600; 
+            letter-spacing: -0.005em; 
+            text-align: center; 
+            margin-bottom: 3rem; 
+        }
+        h3 { 
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            margin-bottom: 0.8rem;
+        }
+        p { 
+            font-size: 1.15rem; 
+            color: var(--text-muted); 
+            text-align: center; 
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
+        }
 
-        #ai-data { background: var(--primary-color); color: white; }
-        #ai-data h2 { color: white; border-bottom-color: var(--secondary-color); }
-        #ai-data h3 { color: #cbd5e1; }
-        .ai-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .ai-box { background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); transition: background 0.3s; }
-        .ai-box:hover { background: rgba(255,255,255,0.1); }
+        /* Hero Section */
+        #home { background-color: var(--bg-secondary); }
+        .subtitle { 
+            font-size: 1.75rem; 
+            font-weight: 500; 
+            margin-bottom: 2rem; 
+            color: var(--text-main); 
+            text-align: center; 
+        }
+        .contact-links { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .btn { 
+            padding: 0.8rem 1.5rem; 
+            background: var(--text-main); 
+            color: #fff; 
+            border-radius: 980px; 
+            font-size: 1rem; 
+            font-weight: 400; 
+            transition: transform 0.2s, opacity 0.2s; 
+        }
+        .btn.secondary {
+            background: rgba(0,0,0,0.05);
+            color: var(--text-main);
+        }
+        .btn:hover { opacity: 0.8; transform: scale(1.02); color: #fff; }
+        .btn.secondary:hover { color: var(--text-main); }
 
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-        .skill-tag { background: #e2e8f0; color: var(--primary-color); padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
-        .skill-tag:hover { background: var(--secondary-color); color: white; }
+        /* Grids for Desktop */
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 2rem; 
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            h1 { font-size: 5.5rem; }
+        }
 
-        footer { background: var(--primary-color); color: white; text-align: center; padding: 2rem; margin-top: auto; }
+        /* Cards */
+        .card { 
+            background: #ffffff; 
+            padding: 2.5rem; 
+            border-radius: 18px; 
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        .card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08); 
+        }
+        .card p { text-align: left; font-size: 1rem; margin-bottom: 0; }
+        .card-header { margin-bottom: 1rem; }
+        .date { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; display: block; margin-top: 0.3rem;}
+        
+        ul.exp-list { margin-left: 1.5rem; margin-top: 1.5rem; color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+        ul.exp-list li { margin-bottom: 0.8rem; }
+
+        /* Dark Section for AI */
+        #ai-data { background: var(--bg-dark); color: var(--text-light); }
+        #ai-data h2 { color: var(--text-light); }
+        #ai-data p { color: #a1a1a6; }
+        #ai-data .card { 
+            background: #1d1d1f; 
+            box-shadow: none; 
+        }
+        #ai-data .card h3 { color: var(--text-light); }
+
+        /* Skills */
+        .skills-grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 0.8rem; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .skill-tag { 
+            background: #ffffff; 
+            color: var(--text-main); 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 12px; 
+            font-weight: 500; 
+            font-size: 1rem; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.2s; 
+        }
+        .skill-tag:hover { border-color: var(--text-main); }
+
+        footer { 
+            background: var(--bg-secondary); 
+            color: var(--text-muted); 
+            text-align: center; 
+            padding: 3rem; 
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -60,120 +202,119 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#ai-data">AI & Data Systems</a></li>
+            <li><a href="#ai-data">AI & Data</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
         </ul>
     </nav>
 
     <section id="home">
-        [span_0](start_span)<h1>Gaurav Chauhan[span_0](end_span)</h1>
-        <div class="subtitle">Principal Architect | [span_1](start_span)AWS Certified Solutions Architect[span_1](end_span)</div>
-        [span_2](start_span)<p style="max-width: 600px; margin: 0 auto;">Building high-quality, scalable, and innovative systems that create real impact for clients and end users.[span_2](end_span)</p>
-        <div class="contact-links">
-            <a href="mailto:chauhan.gaurav@hotmail.com" class="btn">Email Me</a>
-            <a href="https://www.linkedin.com/in/chauhangs" target="_blank" class="btn">LinkedIn</a>
-            <a href="https://gauravchauhan.dev/" target="_blank" class="btn">Portfolio</a>
+        <div class="container">
+            <h1>Gaurav Chauhan</h1>
+            <div class="subtitle">Principal Architect</div>
+            <p>Building high-quality, scalable, and innovative systems that create real impact for clients and end users.</p>
+            <div class="contact-links">
+                <a href="mailto:chauhan.gaurav@hotmail.com" class="btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/chauhangs" target="_blank" class="btn secondary">LinkedIn</a>
+                <a href="https://gauravchauhan.dev/" target="_blank" class="btn secondary">Portfolio</a>
+            </div>
         </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-        [span_3](start_span)<p>As a Principal Architect at ADP, I bring over 17 years of experience in software engineering, architecture, and leadership[span_3](end_span). [span_4](start_span)I specialize in designing and delivering Java-based enterprise solutions across diverse domains including cable, mobile payments, and human capital management[span_4](end_span).</p>
-        <br>
-        [span_5](start_span)<p>I hold an AWS Certified Solutions Architect credential and have extensive experience in cloud-native development and RESTful web services, including the design of HATEOAS-compliant APIs[span_5](end_span).</p>
+        <div class="container">
+            <h2>About Me.</h2>
+            <p>With over 17 years of experience in software engineering, architecture, and leadership, I specialize in designing and delivering Java-based enterprise solutions across diverse domains including cable, mobile payments, and human capital management.</p>
+            <p>As an AWS Certified Solutions Architect, I have extensive experience in cloud-native development and RESTful web services, bringing high-performance, resilient architectures to life.</p>
+        </div>
     </section>
 
     <section id="ai-data">
-        <h2>Advanced Data & Decision Systems</h2>
-        <p>Building the foundational data architectures and scalable processing pipelines required for modern intelligent systems and AI integration.</p>
-        <div class="ai-grid">
-            <div class="ai-box">
-                <h3>Personalized Decision Support</h3>
-                [span_6](start_span)<p>Designed and developed integration workflows between core benefit systems and external decision support platforms to provide personalized guidance based on employees' physical, mental, and financial needs[span_6](end_span).</p>
-            </div>
-            <div class="ai-box">
-                <h3>Data-Driven Narratives</h3>
-                [span_7](start_span)<p>Engineered the Annual Enrollment (AE) Snapshot system to generate data-driven narratives[span_7](end_span). [span_8](start_span)The system describes annual enrollment experiences through key metrics, summarizes behavior, and spots trends within employee populations[span_8](end_span).</p>
-            </div>
-            <div class="ai-box">
-                <h3>Real-Time Event Streaming</h3>
-                [span_9](start_span)<p>Implemented Change Data Capture (CDC) pipelines using Debezium to continuously read WAL logs and broadcast massive datasets in real-time using Kafka[span_9](end_span).</p>
+        <div class="container">
+            <h2>Intelligence, scaled.</h2>
+            <p>Building the foundational data architectures and scalable processing pipelines required for modern intelligent systems and AI agents.</p>
+            
+            <div class="grid-2" style="margin-top: 3rem;">
+                <div class="card">
+                    <h3>AI Agent & LLM Architecture</h3>
+                    <p>Designing scalable AI-based solutions using Java, Spring Boot, Spring AI, and LangChain4j. Leveraging AWS Bedrock to integrate advanced foundational models securely into enterprise backends.</p>
+                </div>
+                <div class="card">
+                    <h3>Data-Driven Narratives</h3>
+                    <p>Engineered the AE Snapshot system to generate data-driven narratives for employee populations. Implemented CDC pipelines using Debezium and Kafka to broadcast massive datasets in real-time.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="card-container">
-            
-            <div class="card">
-                <div class="card-header">
-                    [span_10](start_span)<h3>Principal Architect @ ADP[span_10](end_span)</h3>
-                    <span class="date">Mar 2022 - Present</span>
+        <div class="container">
+            <h2>Professional Experience.</h2>
+            <div class="grid-2">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Principal Architect</h3>
+                        <span class="date">ADP | Mar 2022 - Present</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Developing a benefits carrier integration platform utilizing AWS serverless architecture.</li>
+                        <li>Defining technology roadmaps and architectural blueprints in collaboration with stakeholders.</li>
+                        <li>Developed cloud-native solutions leveraging AWS CDK to optimize scalability.</li>
+                    </ul>
                 </div>
-                <ul class="exp-list">
-                    [span_11](start_span)<li>Developing a benefits carrier integration platform utilizing AWS serverless architecture[span_11](end_span).</li>
-                    [span_12](start_span)<li>Defining technology roadmaps and architectural blueprints in collaboration with business stakeholders[span_12](end_span).</li>
-                    [span_13](start_span)<li>Developed cloud-native solutions leveraging AWS CDK to optimize scalability and cost-effectiveness[span_13](end_span).</li>
-                    [span_14](start_span)<li>Built AWS-based APIs and workflows using Lambda, step-functions, MSK, and Spring Boot[span_14](end_span).</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    [span_15](start_span)<h3>Lead Application Developer @ ADP[span_15](end_span)</h3>
-                    <span class="date">Apr 2019 - Mar 2022</span>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Lead Application Developer</h3>
+                        <span class="date">ADP | Apr 2019 - Mar 2022</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Led development for the Benefits domain across AES and Billing Microservices.</li>
+                        <li>Developed microservices to integrate System of Record (SOR) with Oracle Billing systems.</li>
+                        <li>Automated Annual Enrollment Snapshot report generation, optimizing SQL performance.</li>
+                    </ul>
                 </div>
-                <ul class="exp-list">
-                    [span_16](start_span)<li>Led development for the Benefits domain across AES and Billing Microservices[span_16](end_span).</li>
-                    [span_17](start_span)<li>Developed microservices to integrate System of Record (SOR) with Oracle Billing systems[span_17](end_span).</li>
-                    [span_18](start_span)<li>Migrated microservices from ICP to AWS, and transitioned databases from MongoDB to Postgres[span_18](end_span).</li>
-                    [span_19](start_span)<li>Automated the Annual Enrollment Snapshot report generation, optimizing SQL performance and converting ETL jobs[span_19](end_span).</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    [span_20](start_span)<h3>Senior Application Developer @ ADP[span_20](end_span)</h3>
-                    <span class="date">Oct 2016 - Apr 2019</span>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Senior Application Developer</h3>
+                        <span class="date">ADP | Oct 2016 - Apr 2019</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Drove the redesign of ADP's talent management application utilizing Angular JS.</li>
+                        <li>Developed HATEOAS-compliant REST APIs tailored for Angular UI consumption.</li>
+                    </ul>
                 </div>
-                <ul class="exp-list">
-                    [span_21](start_span)<li>Drove the redesign of ADP's talent management application (TMS) utilizing Angular JS[span_21](end_span).</li>
-                    [span_22](start_span)<li>Developed HATEOAS-compliant REST APIs tailored for Angular UI consumption[span_22](end_span).</li>
-                    [span_23](start_span)<li>Engineered an asynchronous framework dedicated to email distribution and report generation[span_23](end_span).</li>
-                </ul>
-            </div>
 
-            <div class="card">
-                <div class="card-header">
-                    [span_24](start_span)[span_25](start_span)<h3>Senior Server Engineer @ Mozido / SK C&C[span_24](end_span)[span_25](end_span)</h3>
-                    <span class="date">Mar 2013 - Oct 2016</span>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Senior Server Engineer</h3>
+                        <span class="date">Mozido / SK C&C | Mar 2013 - Oct 2016</span>
+                    </div>
+                    <ul class="exp-list">
+                        <li>Served as Lead Java Developer for customized wallet products, including Vodafone Wallet.</li>
+                        <li>Managed end-to-end technical design, release management, and Level 3 production support.</li>
+                    </ul>
                 </div>
-                <ul class="exp-list">
-                    [span_26](start_span)[span_27](start_span)<li>Served as Lead Java Developer for customized wallet products, including Vodafone Wallet (Europe) and Shell Fill Up & Go (UK)[span_26](end_span)[span_27](end_span).</li>
-                    [span_28](start_span)[span_29](start_span)<li>Managed end-to-end technical design, release management, and Level 3 production support[span_28](end_span)[span_29](end_span).</li>
-                    [span_30](start_span)[span_31](start_span)<li>Led agile development teams across the US, Germany, UK, and India[span_30](end_span)[span_31](end_span).</li>
-                </ul>
-            </div>
 
+            </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Technical Arsenal</h2>
-        <div class="skills-grid">
-            [span_32](start_span)<span class="skill-tag">Architecture Reviews[span_32](end_span)</span>
-            [span_33](start_span)<span class="skill-tag">Amazon CloudWatch[span_33](end_span)</span>
-            [span_34](start_span)<span class="skill-tag">TypeScript[span_34](end_span)</span>
-            [span_35](start_span)<span class="skill-tag">AWS Serverless[span_35](end_span)</span>
-            [span_36](start_span)<span class="skill-tag">AWS CDK[span_36](end_span)</span>
-            [span_37](start_span)<span class="skill-tag">Spring Boot[span_37](end_span)</span>
-            [span_38](start_span)<span class="skill-tag">Microservices[span_38](end_span)</span>
-            [span_39](start_span)[span_40](start_span)<span class="skill-tag">Kafka & MSK[span_39](end_span)[span_40](end_span)</span>
-            [span_41](start_span)[span_42](start_span)<span class="skill-tag">PostgreSQL & Document DB[span_41](end_span)[span_42](end_span)</span>
-            [span_43](start_span)<span class="skill-tag">Debezium (CDC)[span_43](end_span)</span>
-            [span_44](start_span)<span class="skill-tag">REST APIs (HATEOAS)[span_44](end_span)</span>
+    <section id="skills" style="background-color: var(--bg-secondary); padding-bottom: 8rem;">
+        <div class="container">
+            <h2>Technical Arsenal.</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Java / Spring Boot</span>
+                <span class="skill-tag">Spring AI</span>
+                <span class="skill-tag">LangChain4j</span>
+                <span class="skill-tag">AWS Bedrock</span>
+                <span class="skill-tag">AWS Serverless & CDK</span>
+                <span class="skill-tag">Amazon CloudWatch</span>
+                <span class="skill-tag">Kafka & MSK</span>
+                <span class="skill-tag">PostgreSQL & Document DB</span>
+                <span class="skill-tag">TypeScript</span>
+            </div>
         </div>
     </section>
 
@@ -188,7 +329,7 @@
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 window.scrollTo({
-                    top: targetElement.offsetTop - 60,
+                    top: targetElement.offsetTop,
                     behavior: 'smooth'
                 });
             });
